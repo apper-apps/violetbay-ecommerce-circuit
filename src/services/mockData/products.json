@@ -1,0 +1,122 @@
+[
+  {
+    "Id": 1,
+    "title": "Classic Denim Jacket",
+    "description": "A timeless denim jacket crafted from premium cotton denim. Perfect for layering and adding a casual edge to any outfit. Features classic button closure, chest pockets, and a comfortable fit.",
+    "price": 89.99,
+    "category": "Men",
+    "image": "https://picsum.photos/400/500?random=1",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "Id": 2,
+    "title": "Elegant Silk Blouse",
+    "description": "Luxurious silk blouse with a flowing silhouette. Features delicate button details and a sophisticated drape that's perfect for both office and evening wear.",
+    "price": 129.99,
+    "category": "Women",
+    "image": "https://picsum.photos/400/500?random=2",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "Id": 3,
+    "title": "Kids Rainbow Sneakers",
+    "description": "Vibrant and comfortable sneakers designed for active kids. Features rainbow color accents, cushioned sole, and durable construction for all-day play.",
+    "price": 49.99,
+    "category": "Kids",
+    "image": "https://picsum.photos/400/500?random=3",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "Id": 4,
+    "title": "Tailored Blazer",
+    "description": "Sharp and sophisticated blazer perfect for professional settings. Made from premium wool blend with a modern slim fit and classic lapels.",
+    "price": 199.99,
+    "category": "Men",
+    "image": "https://picsum.photos/400/500?random=4",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "Id": 5,
+    "title": "Floral Summer Dress",
+    "description": "Light and breezy summer dress with beautiful floral prints. Features a flattering A-line silhouette and comfortable midi length perfect for warm weather.",
+    "price": 79.99,
+    "category": "Women",
+    "image": "https://picsum.photos/400/500?random=5",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "Id": 6,
+    "title": "Kids Denim Overalls",
+    "description": "Adorable and practical denim overalls for kids. Features adjustable straps, multiple pockets, and durable construction for everyday adventures.",
+    "price": 39.99,
+    "category": "Kids",
+    "image": "https://picsum.photos/400/500?random=6",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "Id": 7,
+    "title": "Casual Cotton T-Shirt",
+    "description": "Soft and comfortable cotton t-shirt in a classic fit. Made from 100% organic cotton with a crew neck and short sleeves. Available in multiple colors.",
+    "price": 24.99,
+    "category": "Men",
+    "image": "https://picsum.photos/400/500?random=7",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "Id": 8,
+    "title": "Designer Handbag",
+    "description": "Elegant leather handbag with gold hardware accents. Features multiple compartments, adjustable shoulder strap, and premium craftsmanship.",
+    "price": 249.99,
+    "category": "Women",
+    "image": "https://picsum.photos/400/500?random=8",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "Id": 9,
+    "title": "Kids Superhero Cape",
+    "description": "Inspire imagination with this colorful superhero cape. Made from soft, safe materials with vibrant prints and adjustable neck closure.",
+    "price": 19.99,
+    "category": "Kids",
+    "image": "https://picsum.photos/400/500?random=9",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "Id": 10,
+    "title": "Athletic Performance Shorts",
+    "description": "High-performance athletic shorts with moisture-wicking technology. Features an elastic waistband, side pockets, and breathable mesh panels.",
+    "price": 34.99,
+    "category": "Men",
+    "image": "https://picsum.photos/400/500?random=10",
+    "inStock": true,
+    "featured": false
+  },
+  {
+    "Id": 11,
+    "title": "Vintage Leather Boots",
+    "description": "Stylish vintage-inspired leather boots with classic lace-up design. Features premium leather construction, comfortable heel, and timeless appeal.",
+    "price": 159.99,
+    "category": "Women",
+    "image": "https://picsum.photos/400/500?random=11",
+    "inStock": true,
+    "featured": true
+  },
+  {
+    "Id": 12,
+    "title": "Kids Adventure Backpack",
+    "description": "Durable and colorful backpack perfect for school or adventures. Features multiple compartments, padded straps, and fun character designs.",
+    "price": 29.99,
+    "category": "Kids",
+    "image": "https://picsum.photos/400/500?random=12",
+    "inStock": true,
+    "featured": false
+  }
+]
