@@ -1,5 +1,5 @@
 [
-  {
+{
     "Id": 1,
     "title": "Classic Denim Jacket",
     "description": "A timeless denim jacket crafted from premium cotton denim. Perfect for layering and adding a casual edge to any outfit. Features classic button closure, chest pockets, and a comfortable fit.",
@@ -7,9 +7,19 @@
     "category": "Men",
     "image": "https://picsum.photos/400/500?random=1",
     "inStock": true,
-    "featured": true
+    "featured": true,
+    "variants": [
+      { "size": "S", "color": "Blue", "stock": 5, "priceAdjustment": 0 },
+      { "size": "M", "color": "Blue", "stock": 8, "priceAdjustment": 0 },
+      { "size": "L", "color": "Blue", "stock": 3, "priceAdjustment": 0 },
+      { "size": "XL", "color": "Blue", "stock": 2, "priceAdjustment": 0 },
+      { "size": "S", "color": "Black", "stock": 4, "priceAdjustment": 5 },
+      { "size": "M", "color": "Black", "stock": 6, "priceAdjustment": 5 },
+      { "size": "L", "color": "Black", "stock": 0, "priceAdjustment": 5 },
+      { "size": "XL", "color": "Black", "stock": 1, "priceAdjustment": 5 }
+    ]
   },
-  {
+{
     "Id": 2,
     "title": "Elegant Silk Blouse",
     "description": "Luxurious silk blouse with a flowing silhouette. Features delicate button details and a sophisticated drape that's perfect for both office and evening wear.",
@@ -17,9 +27,19 @@
     "category": "Women",
     "image": "https://picsum.photos/400/500?random=2",
     "inStock": true,
-    "featured": true
+    "featured": true,
+    "variants": [
+      { "size": "XS", "color": "White", "stock": 3, "priceAdjustment": 0 },
+      { "size": "S", "color": "White", "stock": 7, "priceAdjustment": 0 },
+      { "size": "M", "color": "White", "stock": 5, "priceAdjustment": 0 },
+      { "size": "L", "color": "White", "stock": 2, "priceAdjustment": 0 },
+      { "size": "XS", "color": "Pink", "stock": 2, "priceAdjustment": 10 },
+      { "size": "S", "color": "Pink", "stock": 4, "priceAdjustment": 10 },
+      { "size": "M", "color": "Pink", "stock": 3, "priceAdjustment": 10 },
+      { "size": "L", "color": "Pink", "stock": 1, "priceAdjustment": 10 }
+    ]
   },
-  {
+{
     "Id": 3,
     "title": "Kids Rainbow Sneakers",
     "description": "Vibrant and comfortable sneakers designed for active kids. Features rainbow color accents, cushioned sole, and durable construction for all-day play.",
@@ -27,9 +47,17 @@
     "category": "Kids",
     "image": "https://picsum.photos/400/500?random=3",
     "inStock": true,
-    "featured": true
+    "featured": true,
+    "variants": [
+      { "size": "25", "color": "Rainbow", "stock": 4, "priceAdjustment": 0 },
+      { "size": "26", "color": "Rainbow", "stock": 6, "priceAdjustment": 0 },
+      { "size": "27", "color": "Rainbow", "stock": 3, "priceAdjustment": 0 },
+      { "size": "28", "color": "Rainbow", "stock": 5, "priceAdjustment": 0 },
+      { "size": "29", "color": "Rainbow", "stock": 2, "priceAdjustment": 0 },
+      { "size": "30", "color": "Rainbow", "stock": 4, "priceAdjustment": 0 }
+    ]
   },
-  {
+{
     "Id": 4,
     "title": "Tailored Blazer",
     "description": "Sharp and sophisticated blazer perfect for professional settings. Made from premium wool blend with a modern slim fit and classic lapels.",
@@ -37,9 +65,19 @@
     "category": "Men",
     "image": "https://picsum.photos/400/500?random=4",
     "inStock": true,
-    "featured": false
+    "featured": false,
+    "variants": [
+      { "size": "S", "color": "Navy", "stock": 2, "priceAdjustment": 0 },
+      { "size": "M", "color": "Navy", "stock": 4, "priceAdjustment": 0 },
+      { "size": "L", "color": "Navy", "stock": 3, "priceAdjustment": 0 },
+      { "size": "XL", "color": "Navy", "stock": 1, "priceAdjustment": 0 },
+      { "size": "S", "color": "Charcoal", "stock": 3, "priceAdjustment": 15 },
+      { "size": "M", "color": "Charcoal", "stock": 5, "priceAdjustment": 15 },
+      { "size": "L", "color": "Charcoal", "stock": 2, "priceAdjustment": 15 },
+      { "size": "XL", "color": "Charcoal", "stock": 0, "priceAdjustment": 15 }
+    ]
   },
-  {
+{
     "Id": 5,
     "title": "Floral Summer Dress",
     "description": "Light and breezy summer dress with beautiful floral prints. Features a flattering A-line silhouette and comfortable midi length perfect for warm weather.",
@@ -47,9 +85,16 @@
     "category": "Women",
     "image": "https://picsum.photos/400/500?random=5",
     "inStock": true,
-    "featured": true
+    "featured": true,
+    "variants": [
+      { "size": "XS", "color": "Floral", "stock": 4, "priceAdjustment": 0 },
+      { "size": "S", "color": "Floral", "stock": 8, "priceAdjustment": 0 },
+      { "size": "M", "color": "Floral", "stock": 6, "priceAdjustment": 0 },
+      { "size": "L", "color": "Floral", "stock": 3, "priceAdjustment": 0 },
+      { "size": "XL", "color": "Floral", "stock": 2, "priceAdjustment": 0 }
+    ]
   },
-  {
+{
     "Id": 6,
     "title": "Kids Denim Overalls",
     "description": "Adorable and practical denim overalls for kids. Features adjustable straps, multiple pockets, and durable construction for everyday adventures.",
@@ -57,9 +102,16 @@
     "category": "Kids",
     "image": "https://picsum.photos/400/500?random=6",
     "inStock": true,
-    "featured": false
+    "featured": false,
+    "variants": [
+      { "size": "2T", "color": "Blue", "stock": 3, "priceAdjustment": 0 },
+      { "size": "3T", "color": "Blue", "stock": 5, "priceAdjustment": 0 },
+      { "size": "4T", "color": "Blue", "stock": 4, "priceAdjustment": 0 },
+      { "size": "5T", "color": "Blue", "stock": 2, "priceAdjustment": 0 },
+      { "size": "6T", "color": "Blue", "stock": 1, "priceAdjustment": 0 }
+    ]
   },
-  {
+{
     "Id": 7,
     "title": "Casual Cotton T-Shirt",
     "description": "Soft and comfortable cotton t-shirt in a classic fit. Made from 100% organic cotton with a crew neck and short sleeves. Available in multiple colors.",
@@ -67,9 +119,23 @@
     "category": "Men",
     "image": "https://picsum.photos/400/500?random=7",
     "inStock": true,
-    "featured": false
+    "featured": false,
+    "variants": [
+      { "size": "S", "color": "White", "stock": 10, "priceAdjustment": 0 },
+      { "size": "M", "color": "White", "stock": 15, "priceAdjustment": 0 },
+      { "size": "L", "color": "White", "stock": 12, "priceAdjustment": 0 },
+      { "size": "XL", "color": "White", "stock": 8, "priceAdjustment": 0 },
+      { "size": "S", "color": "Black", "stock": 8, "priceAdjustment": 0 },
+      { "size": "M", "color": "Black", "stock": 12, "priceAdjustment": 0 },
+      { "size": "L", "color": "Black", "stock": 10, "priceAdjustment": 0 },
+      { "size": "XL", "color": "Black", "stock": 6, "priceAdjustment": 0 },
+      { "size": "S", "color": "Gray", "stock": 6, "priceAdjustment": 0 },
+      { "size": "M", "color": "Gray", "stock": 9, "priceAdjustment": 0 },
+      { "size": "L", "color": "Gray", "stock": 7, "priceAdjustment": 0 },
+      { "size": "XL", "color": "Gray", "stock": 4, "priceAdjustment": 0 }
+    ]
   },
-  {
+{
     "Id": 8,
     "title": "Designer Handbag",
     "description": "Elegant leather handbag with gold hardware accents. Features multiple compartments, adjustable shoulder strap, and premium craftsmanship.",
@@ -77,9 +143,17 @@
     "category": "Women",
     "image": "https://picsum.photos/400/500?random=8",
     "inStock": true,
-    "featured": true
+    "featured": true,
+    "variants": [
+      { "size": "Small", "color": "Black", "stock": 2, "priceAdjustment": 0 },
+      { "size": "Medium", "color": "Black", "stock": 3, "priceAdjustment": 25 },
+      { "size": "Large", "color": "Black", "stock": 1, "priceAdjustment": 50 },
+      { "size": "Small", "color": "Brown", "stock": 1, "priceAdjustment": 0 },
+      { "size": "Medium", "color": "Brown", "stock": 2, "priceAdjustment": 25 },
+      { "size": "Large", "color": "Brown", "stock": 0, "priceAdjustment": 50 }
+    ]
   },
-  {
+{
     "Id": 9,
     "title": "Kids Superhero Cape",
     "description": "Inspire imagination with this colorful superhero cape. Made from soft, safe materials with vibrant prints and adjustable neck closure.",
@@ -87,9 +161,15 @@
     "category": "Kids",
     "image": "https://picsum.photos/400/500?random=9",
     "inStock": true,
-    "featured": false
+    "featured": false,
+    "variants": [
+      { "size": "One Size", "color": "Red", "stock": 8, "priceAdjustment": 0 },
+      { "size": "One Size", "color": "Blue", "stock": 6, "priceAdjustment": 0 },
+      { "size": "One Size", "color": "Green", "stock": 4, "priceAdjustment": 0 },
+      { "size": "One Size", "color": "Purple", "stock": 3, "priceAdjustment": 2 }
+    ]
   },
-  {
+{
     "Id": 10,
     "title": "Athletic Performance Shorts",
     "description": "High-performance athletic shorts with moisture-wicking technology. Features an elastic waistband, side pockets, and breathable mesh panels.",
@@ -97,9 +177,19 @@
     "category": "Men",
     "image": "https://picsum.photos/400/500?random=10",
     "inStock": true,
-    "featured": false
+    "featured": false,
+    "variants": [
+      { "size": "S", "color": "Black", "stock": 7, "priceAdjustment": 0 },
+      { "size": "M", "color": "Black", "stock": 10, "priceAdjustment": 0 },
+      { "size": "L", "color": "Black", "stock": 8, "priceAdjustment": 0 },
+      { "size": "XL", "color": "Black", "stock": 5, "priceAdjustment": 0 },
+      { "size": "S", "color": "Navy", "stock": 5, "priceAdjustment": 0 },
+      { "size": "M", "color": "Navy", "stock": 8, "priceAdjustment": 0 },
+      { "size": "L", "color": "Navy", "stock": 6, "priceAdjustment": 0 },
+      { "size": "XL", "color": "Navy", "stock": 3, "priceAdjustment": 0 }
+    ]
   },
-  {
+{
     "Id": 11,
     "title": "Vintage Leather Boots",
     "description": "Stylish vintage-inspired leather boots with classic lace-up design. Features premium leather construction, comfortable heel, and timeless appeal.",
@@ -107,9 +197,21 @@
     "category": "Women",
     "image": "https://picsum.photos/400/500?random=11",
     "inStock": true,
-    "featured": true
+    "featured": true,
+    "variants": [
+      { "size": "6", "color": "Brown", "stock": 3, "priceAdjustment": 0 },
+      { "size": "7", "color": "Brown", "stock": 5, "priceAdjustment": 0 },
+      { "size": "8", "color": "Brown", "stock": 4, "priceAdjustment": 0 },
+      { "size": "9", "color": "Brown", "stock": 2, "priceAdjustment": 0 },
+      { "size": "10", "color": "Brown", "stock": 1, "priceAdjustment": 0 },
+      { "size": "6", "color": "Black", "stock": 2, "priceAdjustment": 10 },
+      { "size": "7", "color": "Black", "stock": 4, "priceAdjustment": 10 },
+      { "size": "8", "color": "Black", "stock": 3, "priceAdjustment": 10 },
+      { "size": "9", "color": "Black", "stock": 1, "priceAdjustment": 10 },
+      { "size": "10", "color": "Black", "stock": 0, "priceAdjustment": 10 }
+    ]
   },
-  {
+{
     "Id": 12,
     "title": "Kids Adventure Backpack",
     "description": "Durable and colorful backpack perfect for school or adventures. Features multiple compartments, padded straps, and fun character designs.",
@@ -117,6 +219,14 @@
     "category": "Kids",
     "image": "https://picsum.photos/400/500?random=12",
     "inStock": true,
-    "featured": false
+    "featured": false,
+    "variants": [
+      { "size": "Small", "color": "Red", "stock": 6, "priceAdjustment": 0 },
+      { "size": "Medium", "color": "Red", "stock": 4, "priceAdjustment": 5 },
+      { "size": "Small", "color": "Blue", "stock": 5, "priceAdjustment": 0 },
+      { "size": "Medium", "color": "Blue", "stock": 3, "priceAdjustment": 5 },
+      { "size": "Small", "color": "Green", "stock": 2, "priceAdjustment": 0 },
+      { "size": "Medium", "color": "Green", "stock": 1, "priceAdjustment": 5 }
+    ]
   }
 ]

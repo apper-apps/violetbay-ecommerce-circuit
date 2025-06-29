@@ -1,31 +1,47 @@
-import React, { useState, useEffect } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import { motion } from 'framer-motion';
-import Button from '@/components/atoms/Button';
-import Badge from '@/components/atoms/Badge';
-import Loading from '@/components/ui/Loading';
-import Error from '@/components/ui/Error';
-import { useCart } from '@/hooks/useCart';
-import { productService } from '@/services/api/productService';
-import ApperIcon from '@/components/ApperIcon';
-
+import React, { useEffect, useState } from "react";
+import { Link, useParams } from "react-router-dom";
+import { motion } from "framer-motion";
+import ImageZoomer from "@/components/molecules/ImageZoomer";
+import VariantSelector from "@/components/molecules/VariantSelector";
+import RecommendedProducts from "@/components/organisms/RecommendedProducts";
+import ApperIcon from "@/components/ApperIcon";
+import Badge from "@/components/atoms/Badge";
+import Button from "@/components/atoms/Button";
+import Error from "@/components/ui/Error";
+import Loading from "@/components/ui/Loading";
+import { useCart } from "@/hooks/useCart";
+import { productService } from "@/services/api/productService";
 const ProductDetailPage = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [quantity, setQuantity] = useState(1);
+  const [selectedVariant, setSelectedVariant] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [recommendedProducts, setRecommendedProducts] = useState([]);
+  const [loadingRecommended, setLoadingRecommended] = useState(false);
   const { addToCart, getCartItem } = useCart();
 
   const cartItem = getCartItem(parseInt(id));
 
-  useEffect(() => {
+useEffect(() => {
     const loadProduct = async () => {
       try {
         setLoading(true);
         setError('');
         const productData = await productService.getById(id);
         setProduct(productData);
+        
+        // Load recommended products
+        setLoadingRecommended(true);
+        try {
+          const recommended = await productService.getRecommended(parseInt(id), productData.category);
+          setRecommendedProducts(recommended);
+        } catch (recErr) {
+          console.error('Error loading recommended products:', recErr);
+        } finally {
+          setLoadingRecommended(false);
+        }
       } catch (err) {
         setError('Product not found');
         console.error('Error loading product:', err);
@@ -39,9 +55,14 @@ const ProductDetailPage = () => {
     }
   }, [id]);
 
-  const handleAddToCart = () => {
+const handleAddToCart = () => {
     if (product) {
-      addToCart(product, quantity);
+      const productToAdd = {
+        ...product,
+        selectedVariant,
+        variantPrice: selectedVariant ? product.price + selectedVariant.priceAdjustment : product.price
+      };
+      addToCart(productToAdd, quantity);
     }
   };
 
@@ -51,7 +72,26 @@ const ProductDetailPage = () => {
     }
   };
 
-  if (loading) {
+  const handleVariantChange = (variant) => {
+    setSelectedVariant(variant);
+  };
+
+  const getCurrentPrice = () => {
+    if (selectedVariant) {
+      return product.price + selectedVariant.priceAdjustment;
+    }
+    return product.price;
+  };
+
+  const isProductAvailable = () => {
+    if (!product?.inStock) return false;
+    if (selectedVariant) {
+      return selectedVariant.stock > 0;
+    }
+    return true;
+  };
+
+if (loading) {
     return (
       <div className="min-h-screen bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -65,6 +105,14 @@ const ProductDetailPage = () => {
                 <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
                 <div className="h-4 bg-gray-200 rounded animate-pulse"></div>
                 <div className="h-4 bg-gray-200 rounded w-3/4 animate-pulse"></div>
+              </div>
+              <div className="space-y-4">
+                <div className="h-6 bg-gray-200 rounded w-1/4 animate-pulse"></div>
+                <div className="flex space-x-2">
+                  <div className="h-10 w-16 bg-gray-200 rounded animate-pulse"></div>
+                  <div className="h-10 w-16 bg-gray-200 rounded animate-pulse"></div>
+                  <div className="h-10 w-16 bg-gray-200 rounded animate-pulse"></div>
+                </div>
               </div>
             </div>
           </div>
@@ -116,32 +164,12 @@ const ProductDetailPage = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          {/* Product Image */}
+{/* Product Image with Zoom */}
           <div className="relative">
-            <div className="aspect-square overflow-hidden rounded-2xl bg-white shadow-lg">
-              <img
-                src={product.image}
-                alt={product.title}
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
-              />
-              
-              {product.featured && (
-                <div className="absolute top-4 left-4">
-                  <Badge variant="accent" size="sm">
-                    <ApperIcon name="Star" size={14} className="mr-1" />
-                    Featured
-                  </Badge>
-                </div>
-              )}
-              
-              {!product.inStock && (
-                <div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">
-                  <Badge variant="danger" size="md">
-                    Out of Stock
-                  </Badge>
-                </div>
-              )}
-            </div>
+            <ImageZoomer 
+              product={product}
+              images={product.images}
+            />
           </div>
 
           {/* Product Info */}
@@ -155,11 +183,17 @@ const ProductDetailPage = () => {
                 {product.title}
               </h1>
               
-              <div className="flex items-center space-x-4 mb-6">
+<div className="flex items-center space-x-4 mb-6">
                 <span className="text-4xl font-bold gradient-text">
-                  ${product.price}
+                  ${getCurrentPrice().toFixed(2)}
                 </span>
-                {product.inStock ? (
+                {selectedVariant?.priceAdjustment !== 0 && selectedVariant && (
+                  <Badge variant="accent" size="sm">
+                    {selectedVariant.priceAdjustment > 0 ? '+' : ''}
+                    ${selectedVariant.priceAdjustment.toFixed(2)}
+                  </Badge>
+                )}
+                {isProductAvailable() ? (
                   <Badge variant="success" size="sm">
                     <ApperIcon name="Check" size={14} className="mr-1" />
                     In Stock
@@ -180,9 +214,15 @@ const ProductDetailPage = () => {
               <p className="text-gray-600 leading-relaxed">
                 {product.description}
               </p>
-            </div>
+</div>
 
-            {product.inStock && (
+            {/* Variant Selection */}
+            <VariantSelector 
+              product={product}
+              onVariantChange={handleVariantChange}
+            />
+
+            {isProductAvailable() && (
               <div className="space-y-6 p-6 bg-white rounded-xl shadow-lg">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-3">
@@ -212,15 +252,16 @@ const ProductDetailPage = () => {
                   </div>
                 </div>
 
-                <div className="flex flex-col sm:flex-row gap-4">
+<div className="flex flex-col sm:flex-row gap-4">
                   <Button
                     variant="primary"
                     size="lg"
                     icon="ShoppingCart"
                     onClick={handleAddToCart}
                     className="flex-1"
+                    disabled={selectedVariant && selectedVariant.stock === 0}
                   >
-                    Add to Cart - ${(product.price * quantity).toFixed(2)}
+                    Add to Cart - ${(getCurrentPrice() * quantity).toFixed(2)}
                   </Button>
                   
                   {cartItem && (
@@ -251,8 +292,14 @@ const ProductDetailPage = () => {
                 </div>
               </div>
             )}
-          </div>
-        </motion.div>
+</motion.div>
+
+        {/* Recommended Products */}
+        <RecommendedProducts 
+          currentProductId={parseInt(id)}
+          category={product.category}
+          className="mt-16"
+        />
       </div>
     </div>
   );
