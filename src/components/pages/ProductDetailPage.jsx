@@ -289,11 +289,11 @@ if (loading) {
                       Secure checkout
                     </div>
                   </div>
-                </div>
+</div>
               </div>
             )}
-</motion.div>
-
+          </div>
+        </motion.div>
         {/* Recommended Products */}
         <RecommendedProducts 
           currentProductId={parseInt(id)}
